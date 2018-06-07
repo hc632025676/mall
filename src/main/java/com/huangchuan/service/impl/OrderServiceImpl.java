@@ -459,6 +459,10 @@ public class OrderServiceImpl implements IOrderService {
                 } catch (IOException e) {
                     logger.error("上传二维码异常",e);
                 }
+
+                //上传完之后，删除upload下面的二维码图片(自己加的)
+                targetFile.delete();
+
                 logger.info("qrPath:" + qrPath);
                 String qrUrl = PropertiesUtil.getProperty("ftp.server.http.prefix")+targetFile.getName();
                 resultMap.put("qrUrl",qrUrl);
