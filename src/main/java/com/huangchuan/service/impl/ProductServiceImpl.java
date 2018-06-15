@@ -240,4 +240,5 @@ public class ProductServiceImpl implements IProductService {
         pageInfo.setList(productListVoList);
         return ServerResponse.createBySuccess(pageInfo);
     }
+
 }
