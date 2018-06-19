@@ -10,6 +10,7 @@ import java.util.concurrent.TimeUnit;
 
 /**
  * Created by hc on 2018/5/31.
+ * 一期的GuavaCache缓存，二期没有使用，替换为Redis
  */
 public class TokenCache {
     private static Logger logger = LoggerFactory.getLogger(TokenCache.class);
