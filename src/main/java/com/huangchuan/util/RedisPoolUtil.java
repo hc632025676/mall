@@ -5,7 +5,7 @@ import lombok.extern.slf4j.Slf4j;
 import redis.clients.jedis.Jedis;
 
 /**
- * Created by hc on 2018/6/15.
+ * Created by geely
  */
 @Slf4j
 public class RedisPoolUtil {
@@ -32,7 +32,6 @@ public class RedisPoolUtil {
         return result;
     }
 
-
     //exTime的单位是秒
     public static String setEx(String key,String value,int exTime){
         Jedis jedis = null;
@@ -48,7 +47,6 @@ public class RedisPoolUtil {
         RedisPool.returnResource(jedis);
         return result;
     }
-
 
     public static String set(String key,String value){
         Jedis jedis = null;
@@ -66,7 +64,6 @@ public class RedisPoolUtil {
         return result;
     }
 
-
     public static String get(String key){
         Jedis jedis = null;
         String result = null;
@@ -81,7 +78,6 @@ public class RedisPoolUtil {
         RedisPool.returnResource(jedis);
         return result;
     }
-
 
     public static Long del(String key){
         Jedis jedis = null;
@@ -98,15 +94,14 @@ public class RedisPoolUtil {
         return result;
     }
 
-
     public static void main(String[] args) {
         Jedis jedis = RedisPool.getJedis();
-        RedisPoolUtil.set("keyTest","value");
-        String value = RedisPoolUtil.get("keyTest");
-        RedisPoolUtil.setEx("keyex","valueex",60*10);
-        RedisPoolUtil.expire("keyTest",60*20);
-        RedisPoolUtil.del("keyTest");
-        String aaa = RedisPoolUtil.get(null);
+        RedisShardedPoolUtil.set("keyTest","value");
+        String value = RedisShardedPoolUtil.get("keyTest");
+        RedisShardedPoolUtil.setEx("keyex","valueex",60*10);
+        RedisShardedPoolUtil.expire("keyTest",60*20);
+        RedisShardedPoolUtil.del("keyTest");
+        String aaa = RedisShardedPoolUtil.get(null);
         System.out.println(aaa);
         System.out.println("end");
     }
