@@ -24,7 +24,7 @@
     </filter-mapping>
 
 
-    <!-- 二期新增重置session时间的filter-->
+    <!-- 二期新增redis重置session时间的filter -->
     <!--<filter>
         <filter-name>sessionExpireFilter</filter-name>
         <filter-class>com.huangchuan.controller.common.SessionExpireFilter</filter-class>
@@ -34,7 +34,8 @@
         <url-pattern>*.do</url-pattern>
     </filter-mapping>-->
 
-    
+
+    <!-- 二期新增的springsession的filter -->
     <filter>
         <filter-name>springSessionRepositoryFilter</filter-name>
         <filter-class>org.springframework.web.filter.DelegatingFilterProxy</filter-class>
@@ -43,7 +44,6 @@
         <filter-name>springSessionRepositoryFilter</filter-name>
         <url-pattern>*.do</url-pattern>
     </filter-mapping>
-
 
     
     <listener>
