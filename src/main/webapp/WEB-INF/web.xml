@@ -65,6 +65,8 @@
     <servlet>
         <servlet-name>dispatcher</servlet-name>
         <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
+        <!-- 默认是dispatcher-servlet.xml，文件名字不能写错 -->
+        <!-- 改名字可以用init-param参数 -->
         <!--<init-param>
             <param-name>contextConfigLocation</param-name>
             <param-value>/WEB-INF/dispatcher-servlet.xml</param-value>
